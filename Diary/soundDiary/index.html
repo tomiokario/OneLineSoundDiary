@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>MyMusicPlayer</title>
+    <!-- JavaScripts -->
+        <!-- 効果音の実装 -->
+        <script src="js/se.js" type="text/javascript"></script>
+
+    <!--CSS-->
+        <!--基本スタイル-->
+        <link href="css/base.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body id="body">
+
+    <div id="diary" class="diary">
+
+
+
+
+        <!-- イベント -->
+
+        <div id="events">
+            <!-- ラジオボタン -->
+            <h2>Events</h2>
+            <input type="radio" name="events" value="hanabi" onclick="getEvents('events'); start()">花火
+            <input type="radio" name="events" value="camp" onclick="getEvents('events'); start()">キャンプ
+            <input type="radio" name="events" value="sea" onclick="getEvents('events'); start()">海　
+
+        </div>
+
+
+
+
+        <!-- 人 -->
+
+        <div id="person">
+            <!-- ラジオボタン -->
+            <h2>Person</h2>
+            <input type="radio" name="person" value="family" onclick="getPerson('person'); add_person()">家族
+            <input type="radio" name="person" value="friend" onclick="getPerson('person'); add_person()">友達
+            <input type="radio" name="person" value="lover" onclick="getPerson('person'); add_person()">恋人
+
+        </div>
+        
+        
+
+
+
+        <!-- 感情 -->
+
+        <div id="emotion">
+
+            <!-- ラジオボタン -->
+            <h2>Emotion</h2>
+            <input type="radio" name="emotion" value="happy" onclick="getEmotion('emotion'); add_emotion()">楽しい
+            <input type="radio" name="emotion" value="sad" onclick="getEmotion('emotion'); add_emotion()">悲しい
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- 効果音 -->
+    <audio id="hanabi" preload="auto" loop>
+        <source src="sound/hanabi/hanabi.mp3" type="audio/mp3">
+    </audio>
+    <audio id="hanabi_lover" preload="auto" loop>
+        <source src="sound/hanabi/hanabi_koibito.mp3" type="audio/mp3">
+    </audio>
+    <audio id="hanabi_friend" preload="auto" loop>
+        <source src="sound/hanabi/hanabi_tomodachi.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="sad" preload="auto" loop>
+        <source src="sound/hanabi/kanashi.mp3" type="audio/mp3">
+    </audio>
+    <audio id="happy" preload="auto" loop>
+        <source src="sound/hanabi/tanoshi.mp3" type="audio/mp3">
+    </audio>
+
+
+</body>

@@ -46,17 +46,23 @@
 
     <div id="diary" class="diary">
 
-        diary
-
-        <!-- スイッチの実装 -->
-        <div>
-            <!--
-                ringで効果音
-
-            -->
-            <button onclick="LightSky();ring();">昼</button>
-            <button onclick="DarkSky()">夜</button>
+        <div id="events">
+            <h2>Events</h2>
+            <!-- fireflower  -->
+            <!--button-->
+            <div id="fireflower">
+                <button onclick="fireflowerStart()">花火start</button>
+                <button onclick="fireflowerStop()">花火stop</button>
+                <button onclick="fireflowerReStart()">花火restart</button>
+            </div>
+            <!-- 効果音 -->
+            <audio id="fireflower" preload="auto">
+                <source src="sound/music1.mp3" type="audio/mp3">
+                <source src="sound/music1.ogg" type="audio/ogg">
+                <source src="sound/music1.wav" type="audio/wav">
+            </audio>
         </div>
+
 
     </div>
 
@@ -65,13 +71,8 @@
 
 
 
-    <!-- 効果音 -->
 
-    <audio id="SoundTest" preload="auto">
-        <source src="sound/test1.mp3" type="audio/mp3">
-        <source src="sound/test1.ogg" type="audio/ogg">
-        <source src="sound/test1.wav" type="audio/wav">
-    </audio>
+
 
 
 </body>

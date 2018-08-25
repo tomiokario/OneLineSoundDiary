@@ -1,0 +1,9 @@
+#sky.night{
+    background: black;
+    color: white;
+}
+#sky.daytime{
+    background: skyblue;
+    color: white;
+}
+

@@ -1,0 +1,29 @@
+body{
+    background: black;
+    color: white;
+}
+#sky{
+    padding: 10%;
+    background: blue;
+}
+
+#landscape{
+    padding: 10%;
+    background: green;
+}
+
+#blackLine{
+    background: black;
+    padding: 1%;
+}
+
+#ground{
+    padding: 8%;
+    background: Brown;
+}
+
+
+#diary{
+    background: gray;
+    padding: 10%;
+}
