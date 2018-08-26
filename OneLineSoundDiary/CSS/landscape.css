@@ -1,0 +1,39 @@
+#sky.night{
+    background: black;
+    color: white;
+}
+#sky.daytime{
+    background: skyblue;
+    color: white;
+}
+
+#back.mountain{
+    background: green;
+}
+#sankaku1.mountain {
+    float: left;
+    width: 0px;
+    height: 0px;
+    border-bottom: solid 250px black;
+    border-left: solid 300px transparent;
+    border-right: solid 300px transparent;
+    margin: 0px auto 50px auto;
+}
+
+#back.hanabi{
+    background: black;
+}
+#back.sea{
+    background: #6080C0;
+}
+
+
+#ground.hanabi{
+    background: #456;
+}
+#ground.mountain{
+    background: #75684E;
+}
+#ground.sea{
+    background: rgb(200,193,161);
+}

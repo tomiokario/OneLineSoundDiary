@@ -1,23 +1,18 @@
-/*----------------------------------------
- * 変数
- * --------------------------------------*/
 var events="def";
 var person="def";
 var emotion="def";
 
 
 function getEvents(name){
-    var radios = document.getElementsByName(name);  //ラジオボタンオブジェクトを取得する
-
-    for(var i=0; i<radios.length; i++){   //ラジオボタンオブジェクトから選択されたものを探す
+    var radios = document.getElementsByName(name);
+    for(var i=0; i<radios.length; i++){
         if (radios[i].checked) {
-            events = radios[i].value;     // eventsにイベント名を代入
+            events = radios[i].value;
             break;
         }
     }
-    console.log("getEvemnt(): deside Event");
+    console.log("getEvemnt(): Eventの決定 " + events);
 }
-
 
 function getPerson(name){
     var radios = document.getElementsByName(name);
@@ -28,9 +23,8 @@ function getPerson(name){
             break;
         }
     }
-    console.log("getPerson(): deside person");
+    console.log("getPerson(): Personの決定 " + person);
 }
-
 
 function getEmotion(name){
     var radios = document.getElementsByName(name);
@@ -41,28 +35,50 @@ function getEmotion(name){
             break;
         }
     }
-    console.log("getEmotion(): deside Emotion");
+    console.log("getEmotion(): Emotionの決定 " + emotion);
 }
 
-/*----------------------------------------
- * Start関数
- * --------------------------------------*/
+
+
+function stop(){
+    hanabiStop();
+    hanabi_loverStop();
+    hanabi_friendStop();
+    campStop();
+    camp_loverStop();
+    camp_friendStop();
+    seaStop();
+    sea_loverStop();
+    sea_friendStop();
+    sadStop();
+    happyStop();
+    console.log("stop(): 音楽の停止")
+}
+
 function start(){
+    console.log("start(): sound start");
     if(events=="hanabi"){
         hanabi();
+        console.log("start(): hanabi");
     }
     else if(events=="camp"){
         camp();
+        console.log("start(): camp");
     }
     else if(events=="sea"){
         sea();
+        console.log("start(): sea");
     }
-    console.log("start(): sound start");
 }
 
-
-
 function hanabi(){
+    campStop();
+    camp_loverStop();
+    camp_friendStop();
+    seaStop();
+    sea_loverStop();
+    sea_friendStop();
+
     hanabiStart();
     hanabi_loverStart();
     hanabi_friendStart();
@@ -71,6 +87,13 @@ function hanabi(){
     console.log("hanabi(): 花火");
 }
 function camp(){
+    hanabiStop();
+    hanabi_loverStop();
+    hanabi_friendStop();
+    seaStop();
+    sea_loverStop();
+    sea_friendStop();
+
     campStart();
     camp_loverStart();
     camp_friendStart();
@@ -80,6 +103,13 @@ function camp(){
 
 }
 function sea(){
+    hanabiStop();
+    hanabi_loverStop();
+    hanabi_friendStop();
+    campStop();
+    camp_loverStop();
+    camp_friendStop();
+
     seaStart();
     sea_loverStart();
     sea_friendStart();
@@ -127,17 +157,8 @@ function add_emotion(){
     }
 }
 
-/*----------------------------------------
- * サウンド制御関数
- * --------------------------------------*/
 
-/*-----------------
- * イベント
- * ---------------*/
 
-/* 花火 */
-
-// hanabi:
 function hanabiStart(){
     var v = document.getElementById("hanabi");
     v.volume=1;
@@ -148,10 +169,12 @@ function hanabiVolumeUp(){
     var v = document.getElementById("hanabi");
     v.volume = 1;
 }
+function hanabiStop(){
+    var v = document.getElementById("hanabi");
+    v.load();
+    v.volume=0;
+}
 
-
-
-// hanabi_lover:
 function hanabi_loverStart(){
     var v = document.getElementById("hanabi_lover");
     v.volume=0;
@@ -162,11 +185,12 @@ function hanabi_loverVolumeUp(){
     var v = document.getElementById("hanabi_lover");
     v.volume = 1;
 }
+function hanabi_loverStop(){
+    var v = document.getElementById("hanabi_lover");
+    v.load();
+    v.volume=0;
+}
 
-
-
-
-// hanabi_friend:
 function hanabi_friendStart(){
     var v = document.getElementById("hanabi_friend");
     v.volume=0;
@@ -177,11 +201,12 @@ function hanabi_friendVolumeUp(){
     var v = document.getElementById("hanabi_friend");
     v.volume = 1;
 }
+function hanabi_friendStop(){
+    var v = document.getElementById("hanabi_friend");
+    v.load();
+    v.volume=0;
+}
 
-
-/* キャンプ */
-
-// camp:
 function campStart(){
     var v = document.getElementById("camp");
     v.volume=1;
@@ -191,8 +216,12 @@ function campVolumeUp(){
     var v = document.getElementById("camp");
     v.volume = 1;
 }
+function campStop(){
+    var v = document.getElementById("camp");
+    v.load();
+    v.volume=0;
+}
 
-// camp_lover:
 function camp_loverStart(){
     var v = document.getElementById("camp_lover");
     v.volume=0;
@@ -203,8 +232,12 @@ function camp_loverVolumeUp(){
     var v = document.getElementById("camp_lover");
     v.volume = 1;
 }
+function camp_loverStop(){
+    var v = document.getElementById("camp_lover");
+    v.load();
+    v.volume=0;
+}
 
-// camp_friend:
 function camp_friendStart(){
     var v = document.getElementById("camp_friend");
     v.volume=0;
@@ -215,15 +248,12 @@ function camp_friendVolumeUp(){
     var v = document.getElementById("camp_friend");
     v.volume = 1;
 }
+function camp_friendStop(){
+    var v = document.getElementById("camp_friend");
+    v.load();
+    v.volume=0;
+}
 
-
-
-
-
-/* 海 */
-
-
-// sea:
 function seaStart(){
     var v = document.getElementById("sea");
     v.volume=1;
@@ -234,9 +264,12 @@ function seaVolumeUp(){
     var v = document.getElementById("sea");
     v.volume = 1;
 }
+function seaStop(){
+    var v = document.getElementById("sea");
+    v.load();
+    v.volume=0;
+}
 
-
-// sea_lover:
 function sea_loverStart(){
     var v = document.getElementById("sea_lover");
     v.volume=0;
@@ -247,8 +280,12 @@ function sea_loverVolumeUp(){
     var v = document.getElementById("sea_lover");
     v.volume = 1;
 }
+function sea_loverStop(){
+    var v = document.getElementById("sea_lover");
+    v.load();
+    v.volume=0;
+}
 
-// sea_friend:
 function sea_friendStart(){
     var v = document.getElementById("sea_friend");
     v.volume=0;
@@ -259,21 +296,12 @@ function sea_friendVolumeUp(){
     var v = document.getElementById("sea_friend");
     v.volume = 1;
 }
+function sea_friendStop(){
+    var v = document.getElementById("sea_friend");
+    v.load();
+    v.volume=0;
+}
 
-
-
-/*-----------------
- * 人
- * ---------------*/
-
-
-
-
-/*-----------------
- * 感情
- * ---------------*/
-
-// happy:
 function happyStart(){
     var v = document.getElementById("happy");
     v.volume=0;
@@ -284,9 +312,12 @@ function happyVolumeUp(){
     var v = document.getElementById("happy");
     v.volume = 1;
 }
+function happyStop(){
+    var v = document.getElementById("happy");
+    v.load();
+    v.volume=0;
+}
 
-
-// sad:
 function sadStart(){
     var v = document.getElementById("sad");
     v.volume=0;
@@ -297,12 +328,8 @@ function sadVolumeUp(){
     var v = document.getElementById("sad");
     v.volume = 1;
 }
-
-
-
-
-
-
-
-
-
+function sadStop(){
+    var v = document.getElementById("sad");
+    v.load();
+    v.volume=0;
+}
