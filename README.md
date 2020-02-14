@@ -15,7 +15,7 @@
 
 ## 実行方法
 
-- github(https://github.com/tomiokario/OneLineSoundDiary)よりリポジトリをクローンまたはダウンロードして，`OneLineSoundDiary/index.html`をブラウザで開くことで実行できる
+- github( https://github.com/tomiokario/OneLineSoundDiary )よりリポジトリをクローンまたはダウンロードして，`OneLineSoundDiary/index.html`をブラウザで開くことで実行できる
 
 また，以下のURL(github pages)でも音楽の作成を試すことができるが， CSSが正常に動作しない．
 https://tomiokario.github.io/OneLineSoundDiary/
